@@ -4,12 +4,30 @@ const Schema = mongoose.Schema
 const MovieSchema = new Schema({
     title: {
         type: String,
-        required: true
+        required: [true,'`{PATH}` alanı zorunludur.'],
+        maxlength: [15,'`{PATH}` alanı (`{VALUE}`), ({MAXLENGTH}) karakterden küçük olmalıdır.'],
+        minlength: [3,'`{PATH}` alanı (`{VALUE}`), ({MINLENGTH}) karakterden büyük olmalıdır.']
     },
-    category: String,
-    country: String,
-    year: Number,
-    imdb_score: Number,
+    category: {
+        type: String,
+        maxlength: [30,'`{PATH}` alanı (`{VALUE}`), ({MAXLENGTH}) karakterden küçük olmalıdır.'],
+        minlength: [3,'`{PATH}` alanı (`{VALUE}`), ({MINLENGTH}) karakterden büyük olmalıdır.']
+    },
+    country: {
+        type: String,
+        maxlength: [30,'`{PATH}` alanı (`{VALUE}`), ({MAXLENGTH}) karakterden küçük olmalıdır.'],
+        minlength: [3,'`{PATH}` alanı (`{VALUE}`), ({MINLENGTH}) karakterden büyük olmalıdır.']
+    },
+    year: {
+      type: Date,
+      max: [2040,'`{PATH}` alanı (`{VALUE}`), ({MAX}) karakterden küçük olmalıdır.'],
+      min: [1071,'`{PATH}` alanı (`{VALUE}`), ({MIN}) karakterden büyük olmalıdır.']  
+    },
+    imdb_score: {
+        type: Number,
+        max: 10,
+        min: 0
+    },
     createdAt: {
         type: Date,
         default: Date.now
