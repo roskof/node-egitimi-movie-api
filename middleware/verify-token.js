@@ -11,6 +11,7 @@ module.exports=(req,res,next)=>{
                 next({status: false, message: 'Failed to authenticate token', code: 93})
             }else{
                 req.decode= decoded,
+                console.log(decoded)
                 next()
             }
         })
