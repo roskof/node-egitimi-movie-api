@@ -19,7 +19,7 @@ const MovieSchema = new Schema({
         minlength: [3,'`{PATH}` alanı (`{VALUE}`), ({MINLENGTH}) karakterden büyük olmalıdır.']
     },
     year: {
-      type: Date,
+      type: Number,
       max: [2040,'`{PATH}` alanı (`{VALUE}`), ({MAX}) karakterden küçük olmalıdır.'],
       min: [1071,'`{PATH}` alanı (`{VALUE}`), ({MIN}) karakterden büyük olmalıdır.']  
     },
