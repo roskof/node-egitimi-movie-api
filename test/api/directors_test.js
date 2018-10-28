@@ -17,6 +17,7 @@ describe('Director tests', () => {
 					throw err;
 
 				token = res.body.token;
+				console.log(token)
 				done();
 			});
 	});
