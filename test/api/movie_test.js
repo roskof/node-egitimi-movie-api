@@ -92,7 +92,7 @@ describe('/api/movies tests', () => {
             chai.request(server)
                 .put('/api/movies/'+movieId)
                 .send(movie)
-                .set('x-access-token','token')
+                .set('x-access-token',token)
                 .end((err,res)=>{
                     res.should.have.status(200)
                     res.body.should.be.a('object')
